@@ -61,6 +61,6 @@ if ($argc > 1)
 	$arr[3][5] = ":";
 
 	$line = implode(" ", $arr);
-	echo(strtotime($line));
+	echo strtotime($line)."\n";
 }
 ?>
