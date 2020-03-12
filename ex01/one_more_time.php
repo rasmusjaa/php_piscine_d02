@@ -4,16 +4,16 @@ if ($argc > 1)
 {
 	$arr = explode(" ", $argv[1]);
 	if (count($arr) != 5)
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 
 	$pattern = "/^([Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche)$/";
 	if (!preg_match($pattern, $arr[0]))
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 	array_shift($arr);
 
 	$pattern = "/^([0-3]?[0-9])$/";
 	if (!preg_match($pattern, $arr[0]) || $arr[0] > 31)
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 
 	if (preg_match("/^([Jj]anvier)$/", $arr[1]))
 		$arr[1] = "January";
@@ -48,15 +48,15 @@ if ($argc > 1)
 	else if (preg_match("/^([Dd]ecembre)$/", $arr[1]))
 		$arr[1] = "December";
 	else
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 
 	$pattern = "/^([0-9]{4})$/";
 	if (!preg_match($pattern, $arr[2]))
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 
 	$pattern = "/^([0-2][0-9].[0-6][0-9].[0-6][0-9])$/";
 	if (!preg_match($pattern, $arr[3]))
-		exit("Wrong Format");
+		exit("Wrong Format\n");
 	$arr[3][2] = ":";
 	$arr[3][5] = ":";
 
